@@ -10,7 +10,7 @@ fs.rm("./app/other/errorArchive", { recursive: true, force: true }, (err) => {
     if (err) {
         console.log(err);
     }
-})
+});
 
 app.set('port', process.env.PORT || 8080);
 app.set('views', __dirname + '/app/server/views');
