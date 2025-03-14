@@ -1,4 +1,4 @@
-# errortesti (not yet working)
+# errortesti
 node.js error screen test
 
 # how to run
