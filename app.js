@@ -4,6 +4,14 @@ var fs = require('fs');
 
 var app = express();
 
+let archivenum = 0;
+
+fs.rm("./app/other/errorArchive", { recursive: true, force: true }, (err) => {
+    if (err) {
+        console.log(err);
+    }
+})
+
 app.set('port', process.env.PORT || 8080);
 app.set('views', __dirname + '/app/server/views');
 app.set('view engine', 'ejs');
@@ -89,15 +97,19 @@ function uploadToArchive(req, statusCode, customMessage) {
     jsonDat = JSON.stringify(updateData);
     jsonData = JSON.parse(jsonDat);
 
-    fs.readFile('./app/other/errorArchive.json', 'utf8', function readFileCallback(err, data) {
+    let dir = "./app/other/errorArchive"
+
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, {recursive: true});
+    }
+
+    fs.writeFile(dir + "/error" + archivenum + ".json", JSON.stringify(updateData), (err) => {
         if (err) {
-            console.log(err);
-        } else {
-        obj = JSON.parse(data); // now it an object
-        obj.archive.push(jsonData); // add some data
-        json = JSON.stringify(obj); // convert it back to json
-        fs.writeFileSync('./app/other/errorArchive.json', json, 'utf8'); // write it back
-    }});
+            console.error(err);
+          }
+    });
+
+    archivenum++
 }
 
 async function getErrorInfo(error) {
