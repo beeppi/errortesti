@@ -3,7 +3,7 @@
     "description": "error status code screen thing",
     "version": "1.0.0",
     "main": "app.js",
-    "author": "benjam",
+    "author": "beeppi",
     "scripts": {
         "start": "node app.js"
     },
