@@ -7,6 +7,8 @@ node.js error screen test
 - **if you have vscode** press F5 to run
 - **if you don't have vscode** you can run `npm start` and also remove `.vscode` folder
 
+## things about this project
+
 **the app.js file has some debug things wich you can remove (lines 20-66)**
 
 to give an error screen to someone use (in app.get):
