@@ -59,3 +59,9 @@ the `statusCode` field needs to be an actual status code a list of them can be f
 the `error` field needs to be a short description about the error wich you can find also in [wikipedia](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 
 the `message` field needs to be a longer description about the error
+
+currently there are these status codes:
+- 404 (not found)
+- 400 (bad request)
+- 500 (internal server error)
+- 418 (i'm a teapot)
