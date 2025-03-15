@@ -74,7 +74,7 @@ app.get('*', (req, res) => {
 async function returnError(res, req, statusCode, customMessage) {
     let errorInfo = await getErrorInfo(statusCode);
     
-    if (errorInfo.customMessage == null) {
+    if (!errorInfo.customMessage) {
         errorInfo.customMessage = customMessage;
     }
 

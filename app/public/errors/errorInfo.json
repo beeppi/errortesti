@@ -3,26 +3,22 @@
         "404": {
             "statusCode": 404,
             "error": "not found",
-            "message": "we did not find the page you were looking for",
-            "customMessage": null
+            "message": "we did not find the page you were looking for"
         },
         "400": {
             "statusCode": 400,
             "error": "bad request",
-            "message": "the request was improper",
-            "customMessage": null
+            "message": "the request was improper"
         },
         "500": {
             "statusCode": 500,
             "error": "Internal Server Error",
-            "message": "something went wrong in the server.",
-            "customMessage": null
+            "message": "something went wrong in the server."
         },
         "418": {
             "statusCode": 418,
             "error": "i'm a teapot",
-            "message": "I (the server) refuse to attempt to brew coffee with a teapot.",
-            "customMessage": null
+            "message": "I (the server) refuse to attempt to brew coffee with a teapot."
         }
     }
 }
