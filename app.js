@@ -58,10 +58,6 @@ app.get("/debug/errorInfoGUI", async (req, res) => {
 
     let info = await getErrorInfo(req.query.statusCode);
 
-    if (info.statusCode == 500 && req.query.statusCode != 500) {
-        res.status(500);
-    }
-
     res.render("errorPage", info);
 })
 
