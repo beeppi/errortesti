@@ -17,13 +17,12 @@ app.set('views', __dirname + '/app/server/views');
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/app/public'));
 
+// the next app.get things are for testing
+// you can remove them except for the last one
+
 app.get('/', (req, res) => {
     res.render('index');
     // returnError(res, req, 418, "Happy april fools! (actual status code btw, added april 1st 1998)"); // for april fools
-});
-
-app.get('/vie', (req, res) => {
-    res.redirect('/');
 });
 
 app.get("/500test", (req, res) => {
@@ -65,6 +64,8 @@ app.get("/debug/errorInfoGUI", async (req, res) => {
 
     res.render("errorPage", info);
 })
+
+// DON'T REMOVE THIS
 
 app.get('*', (req, res) => {
     returnError(res, req, 404, "couldn't find " + req.url);
