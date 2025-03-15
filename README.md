@@ -9,7 +9,14 @@ node.js error screen test
 
 **the app.js file has some debug things wich you can remove (lines 20-66)**
 
-to give an error screen to someone use:
+to give an error screen to someone use (in app.get):
+
 ```javascript
 returnError(res, req, "status code", "custom message");
+```
+
+if you want to get error info use:
+
+```javascript
+let errorInfo = await getErrorInfo("status code");
 ```
