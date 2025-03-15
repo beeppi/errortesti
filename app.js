@@ -22,7 +22,7 @@ app.use(express.static(__dirname + '/app/public'));
 
 app.get('/', (req, res) => {
     res.render('index');
-    // returnError(res, req, 418, "Happy april fools! (actual status code btw, added april 1st 1998)"); // for april fools
+    // returnError(res, req, "418", "Happy april fools! (actual status code btw, added april 1st 1998)"); // for april fools
 });
 
 app.get("/500test", (req, res) => {
@@ -52,7 +52,7 @@ app.get("/debug/errorInfo", async (req, res) => {
 
 app.get("/debug/errorInfoGUI", async (req, res) => {
     if (!req.query.statusCode) {
-        returnError(res, req, 400, "query parameter statusCode required");
+        returnError(res, req, "400", "query parameter statusCode required");
         return ;
     }
 
