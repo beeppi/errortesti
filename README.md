@@ -8,3 +8,8 @@ node.js error screen test
 - **if you don't have vscode** you can run `npm start` and also remove `.vscode` folder
 
 **the app.js file has some debug things wich you can remove (lines 20-66)**
+
+to give an error screen to someone use:
+```javascript
+returnError(res, req, "status code", "custom message");
+```
