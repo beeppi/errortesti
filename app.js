@@ -119,8 +119,11 @@ async function getErrorInfo(error) {
     let asdasd = await asd.statusCodes[error];
 
     if (!asdasd) {
-        let problem = asd.statusCodes[500];
-        problem.customMessage = "couldn't find information about status code " + error;
+        let problem = asd.statusCodes["500"];
+        asd.statusCode = error;
+        asd.error = "unknown error";
+        asd.message = "we don't know what the error you got means";
+        asd.customMessage = "STATUS CODE " + error + " NOT IMPLEMENTED";
         return problem;
     }
 
