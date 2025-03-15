@@ -39,7 +39,7 @@ app.get("/debug/errorInfo", async (req, res) => {
         return ;
     }
 
-    let info = await getErrorInfo(req.query.statusCode, "");
+    let info = await getErrorInfo(req.query.statusCode);
 
     if (info.statusCode == 500 && req.query.statusCode != 500) {
         res.status(500);
@@ -56,7 +56,7 @@ app.get("/debug/errorInfoGUI", async (req, res) => {
         return ;
     }
 
-    let info = await getErrorInfo(req.query.statusCode, "");
+    let info = await getErrorInfo(req.query.statusCode);
 
     if (info.statusCode == 500 && req.query.statusCode != 500) {
         res.status(500);
@@ -72,7 +72,11 @@ app.get('*', (req, res) => {
 
 
 async function returnError(res, req, statusCode, customMessage) {
-    let errorInfo = await getErrorInfo(statusCode, customMessage);
+    let errorInfo = await getErrorInfo(statusCode);
+    
+    if (errorInfo.customMessage == null) {
+        errorInfo.customMessage = customMessage;
+    }
 
     console.log("new error happened: " + errorInfo.statusCode);
 
@@ -108,15 +112,11 @@ function uploadToArchive(req, statusCode, customMessage) {
     archivenum++
 }
 
-async function getErrorInfo(error, customMessage) {
+async function getErrorInfo(error) {
     let joku = fs.readFileSync("./app/public/errors/errorInfo.json");
 
     let asd = await JSON.parse(joku);
     let asdasd = await asd.statusCodes[error];
-
-    if (customMessage != null) {
-        asdasd.customMessage = customMessage;
-    }
 
     if (!asdasd) {
         let problem = asd.statusCodes["500"];
