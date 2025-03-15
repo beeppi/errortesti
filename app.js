@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 });
 
 app.get("/500test", (req, res) => {
-    returnError(res, req, "1234", "moi"); // purposely 1234
+    returnError(res, req, "401", "moi");
 });
 
 app.get("/test", (req, res) => {
