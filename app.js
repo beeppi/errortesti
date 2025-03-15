@@ -91,8 +91,7 @@ function uploadToArchive(req, statusCode, customMessage, extra) {
     const updateData = {
         statusCode: statusCode,
         customMessage: customMessage,
-        url: req.url,
-        extra: null
+        url: req.url
     }
 
     if (extra) {
