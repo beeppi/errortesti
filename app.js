@@ -66,7 +66,6 @@ app.get("/debug/errorInfoGUI", async (req, res) => {
 })
 
 // DON'T REMOVE THIS
-
 app.get('*', (req, res) => {
     returnError(res, req, "404", "couldn't find " + req.url);
 });
