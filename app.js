@@ -80,18 +80,23 @@ async function returnError(res, req, statusCode, customMessage) {
 
     console.log("new error happened: " + errorInfo.statusCode);
 
-    uploadToArchive(req, statusCode, customMessage);
+    uploadToArchive(req, statusCode, customMessage, errorInfo.extra);
     
     res.status(errorInfo.statusCode);
     res.render("errorPage", errorInfo);
 }
 
-function uploadToArchive(req, statusCode, customMessage) {
+function uploadToArchive(req, statusCode, customMessage, extra) {
 
     const updateData = {
         statusCode: statusCode,
         customMessage: customMessage,
-        url: req.url
+        url: req.url,
+        extra: null
+    }
+
+    if (extra) {
+        updateData.extra = extra;
     }
 
     jsonDat = JSON.stringify(updateData);
@@ -123,7 +128,7 @@ async function getErrorInfo(error) {
         problem.statusCode = Number(error);
         problem.error = "unknown error";
         problem.message = "we don't know what the error you got means";
-        problem.customMessage = "STATUS CODE " + error + " NOT IMPLEMENTED";
+        problem.extra = "STATUS CODE " + error + " NOT IMPLEMENTED";
         return problem;
     }
 
