@@ -1,6 +1,13 @@
 # errortesti
 node.js error screen test
 
+## contents
+- [how to run](#how-to-run)
+- [about this project](#things-about-this-project)
+    - [how to give an error](#how-to-give-an-error)
+    - [how to get error info](#how-to-get-error-info)
+    - [how to add error info](#how-to-add-error-info)
+
 ## how to run
 - make sure you have `node.js` installed
 - run `npm -i`
