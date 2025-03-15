@@ -120,10 +120,10 @@ async function getErrorInfo(error) {
 
     if (!asdasd) {
         let problem = asd.statusCodes["500"];
-        asd.statusCode = error;
-        asd.error = "unknown error";
-        asd.message = "we don't know what the error you got means";
-        asd.customMessage = "STATUS CODE " + error + " NOT IMPLEMENTED";
+        problem.statusCode = error;
+        problem.error = "unknown error";
+        problem.message = "we don't know what the error you got means";
+        problem.customMessage = "STATUS CODE " + error + " NOT IMPLEMENTED";
         return problem;
     }
 
