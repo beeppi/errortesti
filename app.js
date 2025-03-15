@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 });
 
 app.get("/500test", (req, res) => {
-    returnError(res, req, 1234, "moi"); // purposely 1234
+    returnError(res, req, "1234", "moi"); // purposely 1234
 })
 
 app.get("/test", (req, res) => {
@@ -35,7 +35,7 @@ app.get("/test", (req, res) => {
 
 app.get("/debug/errorInfo", async (req, res) => {
     if (!req.query.statusCode) {
-        returnError(res, req, 400, "parameter statusCode required");
+        returnError(res, req, "400", "parameter statusCode required");
         return ;
     }
 
@@ -43,7 +43,7 @@ app.get("/debug/errorInfo", async (req, res) => {
 
     if (info.statusCode == 500 && req.query.statusCode != 500) {
         res.status(500);
-        returnError(res, req, 500, info.customMessage);
+        returnError(res, req, "500", info.customMessage);
         return ;
     }
 
@@ -68,7 +68,7 @@ app.get("/debug/errorInfoGUI", async (req, res) => {
 // DON'T REMOVE THIS
 
 app.get('*', (req, res) => {
-    returnError(res, req, 404, "couldn't find " + req.url);
+    returnError(res, req, "404", "couldn't find " + req.url);
 });
 
 
