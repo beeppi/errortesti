@@ -4,6 +4,7 @@
     "version": "1.0.0",
     "main": "app.js",
     "author": "beeppi",
+    "license": "MIT",
     "scripts": {
         "start": "node app.js"
     },
