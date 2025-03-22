@@ -49,8 +49,8 @@ let app = express();
 
 app.use(express.static(__dirname + '/app/public'));
 
-app.get("/", (req, res) => {
-    errorInfo = getErrorInfo(req, res, "404", "example");
+app.get("/", async (req, res) => {
+    errorInfo = await getErrorInfo(req, res, "404", "example");
 });
 ```
 
