@@ -1,6 +1,6 @@
 module.exports = (app) => {
     app.get("/500test", (req, res) => {
-        returnError(res, req, "401", "moi");
+        returnError(req, res, "401", "moi");
     });
     
     app.get("/test", (req, res) => {
@@ -9,7 +9,7 @@ module.exports = (app) => {
     
     app.get("/debug/errorInfo", async (req, res) => {
         if (!req.query.statusCode) {
-            returnError(res, req, "400", "parameter statusCode required");
+            returnError(req, res, "400", "parameter statusCode required");
             return ;
         }
     
@@ -17,7 +17,7 @@ module.exports = (app) => {
     
         if (info.statusCode == 500 && req.query.statusCode != 500) {
             res.status(500);
-            returnError(res, req, "500", info.customMessage);
+            returnError(req, res, "500", info.customMessage);
             return ;
         }
     
@@ -26,7 +26,7 @@ module.exports = (app) => {
     
     app.get("/debug/errorInfoGUI", async (req, res) => {
         if (!req.query.statusCode) {
-            returnError(res, req, "400", "query parameter statusCode required");
+            returnError(req, res, "400", "query parameter statusCode required");
             return ;
         }
     

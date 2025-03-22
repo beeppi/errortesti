@@ -8,8 +8,23 @@ fs.rm("./app/other/errorArchive", { recursive: true, force: true }, (err) => {
     }
 });
 
-
-export async function returnError(res, req, statusCode, customMessage) {
+/**
+ * returns error to someone
+ * 
+ * use case:
+ * 
+ * ```
+ * app.get("/", (req, res) => {
+ *      returnError(req, res, "404", "hi");
+ * });
+ * ```
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} statusCode status code you want to return
+ * @param {*} customMessage a custom message
+ */
+export async function returnError(req, res, statusCode, customMessage) {
     let errorInfo = await getErrorInfo(statusCode);
     
     if (!errorInfo.customMessage) {
@@ -24,7 +39,7 @@ export async function returnError(res, req, statusCode, customMessage) {
     res.render("errorPage", errorInfo);
 }
 
-export function uploadToArchive(req, statusCode, customMessage, extra) {
+function uploadToArchive(req, statusCode, customMessage, extra) {
 
     const updateData = {
         statusCode: statusCode,
@@ -54,6 +69,20 @@ export function uploadToArchive(req, statusCode, customMessage, extra) {
     archivenum++
 }
 
+/**
+ * gets error info as json
+ * 
+ * use case:
+ * 
+ * ```
+ * app.get("/", async (req, res) => {
+ *      let errorInfo = await returnError(req, res, "404", "hi");
+ * });
+ * ```
+ * 
+ * @param {*} error the error you want to get the error
+ * @returns the error info as json
+ */
 export async function getErrorInfo(error) {
     let joku = fs.readFileSync("./app/public/errors/errorInfo.json");
 

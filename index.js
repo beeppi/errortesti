@@ -14,11 +14,10 @@ require("./src/debug")(app); // you can remove this
 
 app.get('/', (req, res) => {
     res.render('index');
-    // returnError(res, req, "418", "Happy april fools! (actual status code btw, added april 1st 1998)"); // for april fools
 });
 
 app.get('*', (req, res) => {
-    returnError(res, req, "404", "couldn't find " + req.url);
+    returnError(req, res, "404", "couldn't find " + req.url);
 });
 
 

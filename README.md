@@ -23,7 +23,7 @@ node.js error screen test
 to give an error screen to someone use (in app.get):
 
 ```javascript
-returnError(res, req, "status code", "custom message");
+returnError(req, res, "status code", "custom message");
 ```
 
 ### how to get error info
