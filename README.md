@@ -16,7 +16,7 @@ node.js error screen test
 
 ## things about this project
 
-**the app.js file has some debug things wich you can remove (lines 20-66)**
+**the index.js file has a debug import wich you can remove (ln. 13)**
 
 ### how to give an error
 
