@@ -12,7 +12,7 @@ node.js error screen test
 - make sure you have `node.js` installed
 - run `npm i`
 - **if you have vscode** press F5 to run
-- **if you don't have vscode** you can run `npm start` and also remove `.vscode` folder
+- **if you don't have vscode** you can run `npm start`. You can also remove the `.vscode` folder
 
 ## things about this project
 
@@ -20,10 +20,21 @@ node.js error screen test
 
 ### how to give an error
 
-to give an error screen to someone use (in app.get):
+to give an error screen to someone you can do something like:
 
 ```javascript
-returnError(req, res, "status code", "custom message");
+const express = require('express');
+const { returnError } = require('./src/errors.js');
+
+let app = express();
+
+app.set('views', __dirname + '/app/server/views');
+app.set('view engine', 'ejs'); // ejs required, use `npm i ejs` if you don't have it
+app.use(express.static(__dirname + '/app/public'));
+
+app.get("/", (req, res) => {
+    returnError(req, res, "404", "example");
+});
 ```
 
 ### how to get error info
@@ -31,7 +42,16 @@ returnError(req, res, "status code", "custom message");
 if you want to get error info use:
 
 ```javascript
-let errorInfo = await getErrorInfo("status code");
+const express = require('express');
+const { getErrorInfo } = require('./src/errors.js');
+
+let app = express();
+
+app.use(express.static(__dirname + '/app/public'));
+
+app.get("/", (req, res) => {
+    errorInfo = getErrorInfo(req, res, "404", "example");
+});
 ```
 
 ### how to add error info
