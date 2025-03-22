@@ -52,13 +52,15 @@ heres an example for 404
 }
 ```
 
-you want to add a new object and the name of that object is what you can use in `returnError()` and `getErrorInfo()`
+here is an explanation on what the thing means:
 
-the `statusCode` field needs to be an actual status code a list of them can be found in [wikipedia](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
+- `statusCode`: needs to be an actual status code a list of them can be found in [wikipedia](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 
-the `error` field needs to be a short description about the error wich you can find also in [wikipedia](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
+- `error`: needs to be a short description about the error wich you can find also in [wikipedia](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 
-the `message` field needs to be a longer description about the error
+- `message`: needs to be a longer description about the error
+
+- if you add a new object the name of that object is what you can use in `returnError()` and `getErrorInfo()`
 
 currently there are these status codes:
 - 404 (not found)
