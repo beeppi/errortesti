@@ -31,12 +31,15 @@ export async function returnError(req, res, statusCode, customMessage) {
         errorInfo.customMessage = customMessage;
     }
 
-    console.log("new error happened: " + errorInfo.statusCode);
+    if (req && res) {
+        console.log("new error happened: " + errorInfo.statusCode);
 
-    uploadToArchive(req, statusCode, customMessage, errorInfo.extra);
+        uploadToArchive(req, statusCode, customMessage, errorInfo.extra);
+        
+        res.status(errorInfo.statusCode);
+        res.render("errorPage", errorInfo);
+    }
     
-    res.status(errorInfo.statusCode);
-    res.render("errorPage", errorInfo);
 }
 
 function uploadToArchive(req, statusCode, customMessage, extra) {

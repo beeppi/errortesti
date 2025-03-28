@@ -53,7 +53,7 @@ here's how it works:
 
 ```javascript
 // use await or it will not work
-await getErrorInfo(req, res, "status code", "custom message");
+await getErrorInfo("status code");
 ```
 
 you can use it in index.js like this:
@@ -67,7 +67,7 @@ let app = express();
 app.use(express.static(__dirname + '/app/public'));
 
 app.get("/", async (req, res) => {
-    errorInfo = await getErrorInfo(req, res, "404", "example");
+    errorInfo = await getErrorInfo("404");
 });
 ```
 
