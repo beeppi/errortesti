@@ -20,7 +20,15 @@ node.js error screen test
 
 ### how to give an error
 
-to give an error screen to someone you can do something like:
+to give an error screen to someone you can use the `returnError()` funktion
+
+here's how it works
+
+```javascript
+returnError(req, res, "status code", "custom message");
+```
+
+you can use it in index.js like this:
 
 ```javascript
 const express = require('express');
@@ -39,7 +47,16 @@ app.get("/", (req, res) => {
 
 ### how to get error info
 
-if you want to get error info use:
+if you want to get error info use the `getErrorInfo()` funktion
+
+here's how it works:
+
+```javascript
+// use await or it will not work
+await getErrorInfo(req, res, "status code", "custom message");
+```
+
+you can use it in index.js like this:
 
 ```javascript
 const express = require('express');
@@ -56,7 +73,7 @@ app.get("/", async (req, res) => {
 
 ### how to add error info
 
-in `app/public/errors/errorInfo.json` is information about some status codes.
+in `./app/public/errors/errorInfo.json` is information about some status codes.
 
 if you want to use more status codes you can do it like this:
 
