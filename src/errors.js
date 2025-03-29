@@ -79,7 +79,7 @@ function uploadToArchive(req, statusCode, customMessage, extra) {
  * 
  * ```
  * app.get("/", async (req, res) => {
- *      let errorInfo = await returnError(req, res, "404", "hi");
+ *      let errorInfo = await returnError("404");
  * });
  * ```
  * 

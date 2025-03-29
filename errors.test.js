@@ -1,9 +1,9 @@
-import { readFile } from 'fs';
-import { returnError } from './src/errors';
+const fs = require('fs');
+const { returnError } = require('./src/errors');
 
 let codes = null
 
-readFile("./app/public/errors/errorInfo.json", (err, data) => {
+fs.readFile("./app/public/errors/errorInfo.json", (err, data) => {
     if (err) {
         throw err;
     }
