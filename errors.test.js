@@ -1,9 +1,9 @@
 const fs = require('fs');
-const { returnError } = require('./src/errors');
+const { getErrorInfo } = require('./src/errors');
 
 let codes = null
 
-fs.readFile("./app/public/errors/errorInfo.json", (err, data) => {
+fs.readFile("./app/other/errors/errorInfo.json", (err, data) => {
     if (err) {
         throw err;
     }
@@ -11,6 +11,8 @@ fs.readFile("./app/public/errors/errorInfo.json", (err, data) => {
     codes = JSON.stringify(data);
 });
 
-for (const value in Object.values(codes.StatusCodes)) {
-    returnError(undefined, undefined, value, "test");
-}
+test("test error info", async () => {
+    for (const thing in Object.values(codes.statusCodes)) {
+        expect(await getErrorInfo(thing)).toBe(codes.statusCodes[thing]);
+    }
+});

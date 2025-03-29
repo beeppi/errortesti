@@ -38,8 +38,9 @@ export async function returnError(req, res, statusCode, customMessage) {
         
         res.status(errorInfo.statusCode);
         res.render("errorPage", errorInfo);
+    } else {
+        throw new Error("req and res cannot be undefined");
     }
-    
 }
 
 function uploadToArchive(req, statusCode, customMessage, extra) {
@@ -87,7 +88,7 @@ function uploadToArchive(req, statusCode, customMessage, extra) {
  * @returns the error info as json
  */
 export async function getErrorInfo(error) {
-    let joku = fs.readFileSync("./app/public/errors/errorInfo.json");
+    let joku = fs.readFileSync("./app/other/errors/errorInfo.json");
 
     let asd = await JSON.parse(joku);
     let asdasd = await asd.statusCodes[error];
