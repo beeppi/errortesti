@@ -10,8 +10,6 @@ made using:
 [![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)](https://expressjs.com/)
 [![EJS](https://img.shields.io/badge/ejs-%23B4CA65.svg?style=for-the-badge&logo=ejs&logoColor=black)](https://ejs.co/)
 
-<!-- don't even try to understand what is happening there -->
-
 ## contents
 - [how to run](#how-to-run)
 - [about this project](#things-about-this-project)
