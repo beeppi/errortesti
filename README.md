@@ -11,11 +11,16 @@ made using:
 [![EJS](https://img.shields.io/badge/ejs-%23B4CA65.svg?style=for-the-badge&logo=ejs&logoColor=black)](https://ejs.co/)
 
 ## contents
+- [license](#license)
 - [how to run](#how-to-run)
 - [about this project](#things-about-this-project)
     - [how to give an error](#how-to-give-an-error)
     - [how to get error info](#how-to-get-error-info)
     - [how to add error info](#how-to-add-error-info)
+
+## license
+
+[![License](https://img.shields.io/github/license/beeppi/errortesti)](./LICENSE)
 
 ## how to run
 - make sure you have `node.js` installed
