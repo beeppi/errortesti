@@ -2,6 +2,16 @@
 
 error screen test
 
+## contents
+- [some stuff](#some-stuff)
+- [how to run](#how-to-run)
+- [about this project](#things-about-this-project)
+    - [how to give an error](#how-to-give-an-error)
+    - [how to get error info](#how-to-get-error-info)
+    - [how to add error info](#how-to-add-error-info)
+
+## some stuff
+
 coded with:
 
 [![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://developer.oracle.com/ar/javascript/)
@@ -13,20 +23,22 @@ made using:
 [![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/)
 [![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)](https://expressjs.com/)
 
-## contents
-- [license](#license)
-- [how to run](#how-to-run)
-- [about this project](#things-about-this-project)
-    - [how to give an error](#how-to-give-an-error)
-    - [how to get error info](#how-to-get-error-info)
-    - [how to add error info](#how-to-add-error-info)
-
-## license
+other:
 
 [![License](https://img.shields.io/github/license/beeppi/errortesti)](./LICENSE)
 
 ## how to run
-- make sure you have `node.js` installed
+
+required to run:
+
+[![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en/download)
+[![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)](https://docs.npmjs.com/cli/v8/commands/npm-install)
+
+> [!NOTE]
+> 
+> you can install NPM with nodeJS
+
+- install project
 - run `npm i`
 - **if you have vscode** press F5 to run
 - **if you don't have vscode** you can run `npm start`. You can also remove the `.vscode` folder
