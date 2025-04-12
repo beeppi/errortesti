@@ -1,9 +1,9 @@
 const fs = require('fs');
-const { getErrorInfo } = require('./src/errors');
+const { getErrorInfo } = require('../errors');
 
 let codes = null
 
-fs.readFile("./app/other/errors/errorInfo.json", (err, data) => {
+fs.readFile("../../app/other/errors/errorInfo.json", (err, data) => {
     if (err) {
         throw err;
     }

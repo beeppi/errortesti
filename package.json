@@ -7,10 +7,13 @@
     "license": "MIT",
     "scripts": {
         "start": "node index.js",
-        "test": "node errors.test.js"
+        "test": "jest"
     },
     "dependencies": {
-        "express": "4.21.2",
-        "ejs": "3.1.10"
+        "ejs": "3.1.10",
+        "express": "4.21.2"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0"
     }
 }
