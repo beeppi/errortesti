@@ -2,6 +2,9 @@
 
 error screen test
 
+[![License](https://img.shields.io/github/license/beeppi/errortesti)](./LICENSE)
+[![tests](https://github.com/beeppi/errortesti/actions/workflows/node.js.yml/badge.svg)](https://github.com/beeppi/errortesti/actions/workflows/node.js.yml)
+
 ## contents
 - [some stuff](#some-stuff)
 - [how to run](#how-to-run)
