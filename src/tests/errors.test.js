@@ -1,18 +1,10 @@
 const fs = require('fs');
 const { getErrorInfo } = require('../errors');
+const codes = require("../errors/errorInfo.json")
 
-let codes = null
-
-fs.readFile("../../app/other/errors/errorInfo.json", (err, data) => {
-    if (err) {
-        throw err;
-    }
-
-    codes = JSON.stringify(data);
-});
 
 test("test error info", async () => {
-    for (const thing in Object.values(codes.statusCodes)) {
-        expect(await getErrorInfo(thing)).toBe(codes.statusCodes[thing]);
+    for (const thing in codes.statusCodes) {
+        expect(await getErrorInfo(thing)).toStrictEqual(codes.statusCodes[thing]);
     }
 });
