@@ -37,7 +37,7 @@ required to run:
 > 
 > you can install NPM with nodeJS
 
-- install project
+- download project
 - run `npm i`
 - **if you have vscode** press F5 to run
 - **if you don't have vscode** you can run `npm start`. You can also remove the `.vscode` folder
