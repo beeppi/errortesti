@@ -1,19 +1,26 @@
 {
-    "name": "errorhandling",
-    "description": "error status code screen thing",
-    "version": "1.1.0",
-    "main": "index.js",
-    "author": "beeppi",
-    "license": "MIT",
-    "scripts": {
-        "start": "node index.js",
-        "test": "jest"
-    },
-    "dependencies": {
-        "ejs": "^3.1.10",
-        "express": "^5.1.0"
-    },
-    "devDependencies": {
-        "jest": "^29.7.0"
-    }
+  "name": "errortesti",
+  "version": "1.1.0",
+  "description": "error status code screen thing",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beeppi/errortesti.git"
+  },
+  "author": "beeppi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/beeppi/errortesti/issues"
+  },
+  "homepage": "https://github.com/beeppi/errortesti#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }
