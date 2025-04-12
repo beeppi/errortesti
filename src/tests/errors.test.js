@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { getErrorInfo } = require('../errors');
+const { getErrorInfo } = require('../modules/errors');
 const codes = require("../errors/errorInfo.json")
 
 
