@@ -6,7 +6,7 @@ error screen test
 [![tests](https://github.com/beeppi/errortesti/actions/workflows/node.js.yml/badge.svg)](https://github.com/beeppi/errortesti/actions/workflows/node.js.yml)
 
 > [!WARNING]
-> if you see "Node unit tests" failing it's
+> if you see `Node unit tests` failing. It's
 > not a good idea to install this program
 
 ## contents
@@ -29,10 +29,6 @@ made using:
 [![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
 [![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/)
 [![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)](https://expressjs.com/)
-
-other:
-
-[![License](https://img.shields.io/github/license/beeppi/errortesti)](./LICENSE)
 
 ## how to run
 
