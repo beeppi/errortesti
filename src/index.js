@@ -1,6 +1,6 @@
 const http = require('http');
 const express = require('express');
-const { returnError } = require('./src/errors');
+const { returnError } = require('./modules/errors');
 
 let app = express();
 
@@ -10,7 +10,7 @@ app.set('views', __dirname + '/app/server/views');
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/app/public'));
 
-require("./src/debug")(app); // you can remove this
+require("./modules/debug")(app); // you can remove this
 
 app.get('/', (req, res) => {
     res.render('index');
