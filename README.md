@@ -5,6 +5,11 @@ error screen test
 [![License](https://img.shields.io/github/license/beeppi/errortesti)](./LICENSE)
 [![tests](https://github.com/beeppi/errortesti/actions/workflows/node.js.yml/badge.svg)](https://github.com/beeppi/errortesti/actions/workflows/node.js.yml)
 
+> [!WANRING]
+> 
+> if you see "Node unit tests" failing it's
+> not a good idea to install this program
+
 ## contents
 - [some stuff](#some-stuff)
 - [how to run](#how-to-run)
