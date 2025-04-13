@@ -37,10 +37,41 @@ required to run:
 > 
 > you can install NPM with nodeJS
 
-- download project
-- run `npm i`
-- **if you have vscode** press F5 to run
-- **if you don't have vscode** you can run `npm start`. You can also remove the `.vscode` folder
+### step 1: install modules
+
+first you need `node.js` and `npm`.
+
+Then open your command line in the
+folder where this project is.
+
+If you **are not** planning on running unit tests run
+
+```bash
+$ npm ci --production
+```
+
+If you **are** planning on running unit tests run
+
+```bash
+$ npm ci
+```
+
+If you for some reason removed the `package-lock.json` file run:
+
+```bash
+$ npm i
+```
+
+### step 2: run program
+if you have VS code you can use f5
+
+if you don't have VS code open command line and write
+
+```bash
+$ npm start
+```
+
+also if you don't have VS code you can remove the `.vscode` folder
 
 ## things about this project
 
